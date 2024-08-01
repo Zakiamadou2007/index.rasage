@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Store - Men</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo h1 {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    .cart {
+        font-size: 1.5em;
+    }
+    
+    .hero {
+        background-image: url(men/castelmezzano-1979546_1280.jpg);
+        color: #fff;
+        text-align: center;
+        padding: 150px 20px;
+    }
+    
+    .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .hero h2 {
+        margin: 0;
+        font-size: 3em;
+        font-weight: 600;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        margin: 20px 0;
+    }
+    
+    .btn {
+        background-color: #60cdff;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #31a2ff;
+    }
+    
+    .products {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #fff;
+    }
+    
+    .products h2 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .product-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .item:hover {
+        transform: translateY(-10px);
+    }
+    
+    .item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .item h3 {
+        font-size: 1.2em;
+        margin: 15px 0 10px;
+        font-weight: 600;
+    }
+    
+    .item p {
+        color: #333;
+    }
+    
+    .item .price {
+        color: #219bff;
+        font-weight: bold;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        nav ul {
+            flex-direction: column;
+            width: 100%;
+        }
+    
+        nav ul li {
+            margin-left: 0;
+            width: 100%;
+            text-align: left;
+        }
+    
+        .hero h2 {
+            font-size: 2.5em;
+        }
+    
+        .hero p {
+            font-size: 1em;
+        }
+    
+        .item {
+            width: 100%;
+        }
+    
+        .about h2,
+        .contact h2 {
+            font-size: 2em;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero {
+            padding: 100px 20px;
+        }
+    
+        .hero h2 {
+            font-size: 2em;
+        }
+    
+        .hero p {
+            font-size: 0.9em;
+        }
+    
+        .btn {
+            padding: 8px 16px;
+        }
+    
+        .products h2,
+        .about h2,
+        .contact h2 {
+            font-size: 1.8em;
+        }
+    }
+    
+    
+            #cart-section {
+                margin-top: 50px;
+                padding: 20px;
+                border: 1px solid #00aeda;
+                border-radius: 10px;
+                background-color: #008ee0;
+            }
+            #cart-items {
+                max-height: 300px;
+                overflow-y: auto;
+                margin-bottom: 20px;
+            }
+            .cart-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .cart-item h6 {
+                margin: 0;
+                flex: 1;
+            }
+            .cart-item .item-quantity {
+                width: 60px;
+                text-align: center;
+            }
+            .cart-item .item-remove {
+                color: rgb(66, 217, 255);
+                cursor: pointer;
+            }
+            .cart-total {
+                text-align: right;
+                font-weight: bold;
+            }
+    
+        </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Beauty Store</h1>
+        </div>
+    </header>
+
+    <section id="products" class="products">
+        <h2>Men's Products</h2>
+        <div class="product-list">
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="recherche un produit"> <!-- Correction de l'ID -->
+            <ul id="search-results"></ul>
+        </div>
+
+<!-- Yves Rocher Mousse à Raser à l’Aloe Vera Bio & à la Camomille Bio -->
+<div class="item">
+    <img src="men/Shaving.men/Y.R.Shaving.foam.jpg" alt="Yves Rocher Mousse à Raser à l’Aloe Vera Bio & à la Camomille Bio">
+    <h3>Yves Rocher Mousse à Raser à l’Aloe Vera Bio & à la Camomille Bio</h3>
+    <p class="price">6000 FCFA</p>
+    <p class="description">Une mousse à raser à l’aloe vera bio et à la camomille bio.</p>
+    <p class="quantity">Quantité : 200 ml</p>
+    <p class="brand">Marque : Yves Rocher</p>
+    <button class="btn btn-primary add-to-cart" data-title="Yves Rocher Mousse à Raser à l’Aloe Vera Bio & à la Camomille Bio" data-price="6000">Ajouter au panier</button>
+</div>
+
+<!-- Yves Rocher Baume Après-Rasage à l’Aloe Vera Bio & à la Camomille Bio -->
+<div class="item">
+    <img src="men/Shaving.men/Y.R.aftershave.jpg" alt="Yves Rocher Baume Après-Rasage à l’Aloe Vera Bio & à la Camomille Bio">
+    <h3>Yves Rocher Baume Après-Rasage à l’Aloe Vera Bio & à la Camomille Bio</h3>
+    <p class="price">6000 FCFA</p>
+    <p class="description">Un baume après-rasage à l’aloe vera bio et à la camomille bio.</p>
+    <p class="quantity">Quantité : 100 ml</p>
+    <p class="brand">Marque : Yves Rocher</p>
+    <button class="btn btn-primary add-to-cart" data-title="Yves Rocher Baume Après-Rasage à l’Aloe Vera Bio & à la Camomille Bio" data-price="6000">Ajouter au panier</button>
+</div>
+
+<!-- Yves Rocher Soin Visage & Barbe Courte à l’Aloe Vera Bio & à la Camomille Bio -->
+<div class="item">
+    <img src="men/Shaving.men/Y.R.F&SB.care.jpg" alt="Yves Rocher Soin Visage & Barbe Courte à l’Aloe Vera Bio & à la Camomille Bio">
+    <h3>Yves Rocher Soin Visage & Barbe Courte à l’Aloe Vera Bio & à la Camomille Bio</h3>
+    <p class="price">7000 FCFA</p>
+    <p class="description">Un soin pour le visage et la barbe courte à l’aloe vera bio et à la camomille bio.</p>
+    <p class="quantity">Quantité : 50 ml</p>
+    <p class="brand">Marque : Yves Rocher</p>
+    <button class="btn btn-primary add-to-cart" data-title="Yves Rocher Soin Visage & Barbe Courte à l’Aloe Vera Bio & à la Camomille Bio" data-price="7000">Ajouter au panier</button>
+</div>
+    </div>
+</section>
+
+<section id="cart-section">
+    <h2>Panier</h2>
+    <div id="cart-items"></div>
+    <p class="cart-total">Total: <span id="cart-total">0</span> franc CFA</p>
+    <div class="referrer-selection">
+        <label for="referrer">Qui vous a parlé de ce site ?</label>
+        <select id="referrer" required>
+            <option value="">Sélectionnez un nom</option>
+            <option value="Amate">Amate</option>
+            <option value="Oumaima">Oumaima</option>
+            <option value="Alissa">Alissa</option>
+            <option value="Soraya">Soraya</option>
+            <option value="Hayat">Hayat</option>
+            <option value="Aïda">Aïda</option>
+            <option value="Asmah">Asmah</option>
+            <option value="Altiné">Altiné</option>
+            <option value="Bénédive">Bénédive</option>
+            <option value="Fadila">Fadila</option>
+            <option value="Imane">Imane</option>
+            <option value="Khaira">Khaira</option>
+            <option value="Mariam">Mariam</option>
+            <option value="Sira">Sira</option>
+            <option value="Tasnim">Tasnim</option>
+            <option value="Amina">Amina</option>
+            <option value="Malika">Malika</option>
+        </select>
+    </div>
+    <a href="#" id="checkout-button" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+            <path fill="#00ffcc" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+        </svg>
+        Passez commande
+    </a>
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+    const cart = [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    function updateCart() {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <h6>${item.title}</h6>
+                <input type="number" class="item-quantity" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+                <span class="item-remove" onclick="removeFromCart(${index})">&times;</span>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+            total += item.price * item.quantity;
+        });
+
+        cartTotal.innerText = total;
+    }
+
+    function addToCart(title, price) {
+        const existingItem = cart.find(item => item.title === title);
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ title, price, quantity: 1 });
+        }
+
+        updateCart();
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function updateQuantity(index, quantity) {
+        cart[index].quantity = parseInt(quantity);
+        updateCart();
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const title = button.getAttribute('data-title');
+            const price = parseInt(button.getAttribute('data-price'));
+            addToCart(title, price);
+        });
+    });
+
+    function checkout() {
+        const cartDetails = cart.map(item => `${item.title} x${item.quantity}`).join(', ');
+        const total = cartTotal.innerText;
+
+        const emailBody = `Panier: ${cartDetails}\nTotal: ${total} CFA`;
+        const emailSubject = encodeURIComponent('Commande depuis le site Beauty Store');
+        const emailBodyEncoded = encodeURIComponent(emailBody);
+
+        window.location.href = `mailto:contact@beautystore.com?subject=${emailSubject}&body=${emailBodyEncoded}`;
+    }
+</script>
+</body>
+</html>
